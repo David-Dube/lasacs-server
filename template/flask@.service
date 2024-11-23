@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask server for %I
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=bash -e /home/pi/lasacs/start_flask.sh %i
+
+[Install]
+WantedBy=multi-user.target
